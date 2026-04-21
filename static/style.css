@@ -1,0 +1,32 @@
+body {
+    font-family: "Hiragino Maru Gothic Pro", "Yu Gothic", sans-serif;
+    background: #fff7fb;
+    color: #444;
+    text-align: center;
+}
+
+h1 {
+    color: #ff8fb1;
+}
+
+.card {
+    display: inline-block;
+    background: white;
+    border-radius: 16px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+img {
+    width: 200px;
+    border-radius: 12px;
+}
+
+button {
+    background: #ffb6c1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+}

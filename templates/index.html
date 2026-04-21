@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>My Illustration Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #fff0f5; /* 日系浅粉 */
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff69b4;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+
+        .gallery {
+            margin-top: 20px;
+        }
+
+        .card {
+            display: inline-block;
+            background: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 200px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        .delete-btn {
+            display: block;
+            margin-top: 8px;
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎨 My Illustration Gallery</h1>
+
+    <div>
+        <a href="/login">登录</a > |
+        <a href="/upload">上传</a > |
+        <a href="/logout">退出</a >
+    </div>
+
+    <div class="gallery">
+        {% for art in artworks %}
+            <div class="card">
+
+                <!-- 图片 -->
+                <img src="{{ url_for('static', filename='uploads/' + art.filename) }}">
+
+                <!-- 删除按钮（只对本人显示） -->
+                {% if current_user.is_authenticated %}
+                    <a class="delete-btn"
+                       href="{{ url_for('delete', id=art.id) }}"
+                       onclick="return confirm('确定删除这张图片吗？')">
+                       ❌ 删除
+                    </a >
+                {% endif %}
+
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

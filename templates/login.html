@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #fff0f5;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff69b4;
+        }
+
+        form {
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff69b4;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff85c1;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>🔐 用户登录</h2>
+
+<form method="POST">
+    <!-- ❗name必须和后端一致 -->
+    <input type="text" name="username" placeholder="用户名" required><br>
+    <input type="password" name="password" placeholder="密码" required><br>
+
+    <button type="submit">登录</button>
+</form>
+
+<a href=" ">返回首页</a >
+
+</body>
+</html>
